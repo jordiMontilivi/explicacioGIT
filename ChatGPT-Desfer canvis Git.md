@@ -357,51 +357,51 @@ A --- B --- C --- D --- C'
 
 ### **Exemples pràctics**
 
-#### **Ejemplo 1: Revertir un commit específico**
+#### **Exemple 1: Revertir un commit específic**
 
-1. Miras el historial para identificar el commit:
+1. Mires l'historial per identificar el commit:
    ```bash
    git log --oneline
    ```
    Salida:
    ```css
-   d4f7e89 (HEAD -> main) Agregó nueva funcionalidad
-   a8c9f10 Fix errores en la validación
-   9b2c6d3 Implementación inicial
+   d4f7e89 (HEAD -> main) Va afegir nova funcionalitat
+   a8c9f10 Corregir errors a la validació
+   9b2c6d3 Implementació inicial
    ```
-2. Deseas revertir el commit `a8c9f10`. Ejecuta:
+2. Vols revertir el commit `a8c9f10`. Executa:
    ```bash
    git revert a8c9f10
    ```
-3. Git abre un editor para confirmar el mensaje del nuevo commit. El mensaje por defecto será algo como:
+3. Git obre un editor per confirmar el missatge del nou commit. El missatge per defecte serà:
    ```sql
-   Revert "Fix errores en la validación"
+   Revert "Corregir errors en la validació"
 
-   This reverts commit a8c9f10.
+   Això reverteix el commit a8c9f10.
    ```
-4. Después de confirmar, el historial ahora es:
+4. Després de confirmar, l'historial ara és:
    ```arduino
-   d4f7e89 Agregó nueva funcionalidad
-   a8c9f10 Fix errores en la validación
-   c5d8e34 Revert "Fix errores en la validación"
-   9b2c6d3 Implementación inicial
+   d4f7e89 Va afegir nova funcionalitat
+   a8c9f10 Corregir errors a la validació
+   c5d8e34 Revertir "Corregir errors a la validació"
+   9b2c6d3 Implementació inicial
    ```
 
 ---
 
-#### **Ejemplo 2: Revertir múltiples commits**
+#### **Exemple 2: Revertir múltiples commits**
 
-1. Quieres revertir los últimos tres commits:
+1. Vols revertir els últims tres commits:
    ```bash
    git revert HEAD~3..HEAD
    ```
-2. Esto genera un nuevo commit para cada uno de los tres commits anteriores, aplicando los cambios inversos.
+2. Això genera un nou commit per a cada un dels tres commits anteriors, aplicant els canvis inversos.
 
 ---
 
-#### **Ejemplo 3: Revertir cambios en un repositorio remoto**
+#### **Exemple 3: Revertir canvis en un repositori remot**
 
-1. Revertiste un commit localmente y necesitas enviar los cambios al remoto:
+1. Has revertit un commit localment i necessites enviar els canvis al remot:
    ```bash
    git revert <commit_hash>
    git push origin main
