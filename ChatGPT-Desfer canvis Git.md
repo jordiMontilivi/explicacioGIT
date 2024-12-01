@@ -65,12 +65,12 @@ git reset --hard HEAD~1
 Per restaurar un fitxer a un commit anterior sense afectar altres canvis:
 
 ```bash
-git restore --source=<commit_hash> <fitxer>
+git checkout --source=<commit_hash> <fitxer>
 ```
 ⚠️ Tin en compte que `git checkout` per a restaurar fitxers es més antic. L'alternativa moderna és usar `git restore`:
 
 ```bash
-git restore --source=<commit_hash> <archivo>
+git restore --source=<commit_hash> <fitxer>
 ```
 ---
 
